@@ -14,7 +14,7 @@ async function connectWithRetry() {
 
     channel.consume(QUEUE, (msg) => {
       if (msg) {
-        console.log("Processing:", msg.content.toString());
+        console.log("Processingggg:", msg.content.toString());
         // channel.ack(msg);
       }
     });

@@ -37,16 +37,16 @@ app.post("/send", async (req, res) => {
   };
 
   channel.sendToQueue(
-      QUEUE,
-      Buffer.from(JSON.stringify(data)),
-      {
-        persistent: true // Message không bị mất khi RabbitMQ restart
-      }
+    QUEUE,
+    Buffer.from(JSON.stringify(data)),
+    {
+      persistent: true // Message không bị mất khi RabbitMQ restart
+    }
   );
 
   console.log("Sent:", data);
 
-  res.json({status: "sent", dataSent: data});
+  res.json({ status: "sent", dataSent: data });
 
 });
 
